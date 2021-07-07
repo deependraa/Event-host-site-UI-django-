@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+      <div class="container Pagehead">
+        <h1>TagEvent</h1>
+      </div>
+      <div class="Notices_container">
+        <div class="row eventrow">
+            
+          {% if all_obj%}
+          {% for all_obj in all_obj %}
+            <div class="col-6 col-md-3 Notices_box">
+              <div class="Image">
+                <img src= {{all_obj.Image.url}} alt="">
+              </div>
+              <div class="event_content">
+                <form action="{% url 'events' all_obj.id %}" method="POST">
+                {% csrf_token %} 
+                    <a >
+                      <button class="heart" type="submit" name="post_id"
+                      value="{{all_obj.id}}">
+                      </button>
+                    </a>
+                </form>
+               
+                <h5>{{all_obj.Date}}</h5>
+                <h5>{{all_obj.EventName}}</h5>
+                <p>{{all_obj.EventDescription}}</p>
+              </div>
+            </div>
+            {% endfor %}
+          {% else %}
+        <h1>No data To Dispaly</h1>
+          {% endif %}
+            
+{% comment %} 
+            <div class="col-6 col-md-3 Notices_box">
+              <div class="Image">
+               <img src="{% static 'sample_images/astronaut_spacesuit_reflection_144426_1920x1080.jpg'%}" alt="">
+              </div>
+              <div class="event_content">
+                <div class="heart"></div>
+                <h5>Date:- 5 May 2012</h5>
+                <h5>Event_name</h5>
+                <p>adad ad ruioha  ihy cc ahlahiowud a aisjp asdalduoinv nasojbncva aflhadnn sgoa  asnm</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3 Notices_box">
+              <div class="Image">
+               <img src="{% static 'sample_images/astronaut_spacesuit_reflection_144426_1920x1080.jpg'%}" alt="">
+              </div>
+              <div class="event_content">
+                <div class="heart"></div>
+                <h5>Date:- 5 May 2012</h5>
+                <h5>Event_name</h5>
+                <p>adad ad ruioha  ihy cc ahlahiowud a aisjp asdalduoinv nasojbncva aflhadnn sgoa  asnm</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3 Notices_box">
+              <div class="Image">
+               <img src="{% static 'sample_images/astronaut_spacesuit_reflection_144426_1920x1080.jpg'%}" alt="">
+              </div>
+              <div class="event_content">
+                <div class="heart"></div>
+                <h5>Date:- 5 May 2012</h5>
+                <h5>Event_name</h5>
+                <p>adad ad ruioha  ihy cc ahlahiowud a aisjp asdalduoinv nasojbncva aflhadnn sgoa  asnm</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3 Notices_box">
+              <div class="Image">
+               <img src="{% static 'sample_images/astronaut_spacesuit_reflection_144426_1920x1080.jpg'%}" alt="">
+              </div>
+              <div class="event_content">
+                <div class="heart"></div>
+                <h5>Date:- 5 May 2012</h5>
+                <h5>Event_name</h5>
+                <p>adad ad ruioha  ihy cc ahlahiowud a aisjp asdalduoinv nasojbncva aflhadnn sgoa  asnm</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3 Notices_box">
+              <div class="Image">
+              <img src="{% static 'sample_images/astronaut_spacesuit_reflection_144426_1920x1080.jpg'%}" alt="">
+              </div>
+              <div class="event_content">
+                <div class="heart"></div>
+                <h5>Date:- 5 May 2012</h5>
+                <h5>Event_name</h5>
+                <p>adad ad ruioha  ihy cc ahlahiowud a aisjp asdalduoinv nasojbncva aflhadnn sgoa  asnm</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3 Notices_box">
+              <div class="Image">
+               <img src="{% static 'sample_images/astronaut_spacesuit_reflection_144426_1920x1080.jpg'%}" alt="">
+              </div>
+              <div class="event_content">
+                <div class="heart"></div>
+                <h5>Date:- 5 May 2012</h5>
+                <h5>Event_name</h5>
+                <p>adad ad ruioha  ihy cc ahlahiowud a aisjp asdalduoinv nasojbncva aflhadnn sgoa  asnm</p>
+              </div>
+            </div> {% endcomment %}
+
+    
+        </div>
+      </div>
+
+      
+{% endblock%}

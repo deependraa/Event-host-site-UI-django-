@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% comment %} {% include  'Singles/message_register.html' %} {% endcomment %}
+    <div class="container">
+
+        <h2 class="login">Signup</h2>
+        <div class="infodiv">   
+         <div class="input-group">
+                <label for="first-name" class="input-group-addon" id="basic-addon3">First name</label>
+                <input type="text" name="first-name" class="form-control control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+            <div class="input-group">
+                <label for="last_name" class="input-group-addon" id="basic-addon1">Last name</label>
+                <input type="password" name="last_name" class="form-control control" placeholder="Password" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group">
+                <label for="email" class="input-group-addon" id="basic-addon3">Email</label>
+                <input type="text" name="email" class="form-control control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+            <div class="input-group">
+                <label for="password" class="input-group-addon" id="basic-addon1">Password</label>
+                <input type="password" name="password" class="form-control control" placeholder="Password" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group">
+                <label for="password2" class="input-group-addon" id="basic-addon1">Password</label>
+                <input type="password2" name="password" class="form-control control" placeholder="Password" aria-describedby="basic-addon1">
+            </div>
+
+        </div>    
+        <button class="buttonsub" type="submit">Signup</button><br>
+
+    </div>    
+
+{% endblock %}
